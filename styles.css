@@ -53,7 +53,7 @@ a {
   justify-content: center;
   align-items: center;
   /* overflow: hidden; */
-  padding: 24px 0px 0px;
+  padding: 0px 0px 0px;
   transition: 0.25s;
 }
 .options {
