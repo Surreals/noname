@@ -1,109 +1,200 @@
 @import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Quicksand:wght@300&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Ysabeau+SC:wght@200&display=swap");
 
 body {
-	background-color: black;
-	color: white;
-	font-family: "Alumni Sans Pinstripe", sans-serif;
+  /* background-color: #f5b7b7; */
+  background-color: black;
+  color: white;
+  font-family: "Quicksand", sans-serif;
 }
 
-.header {
+a {
+  color: unset;
+  text-decoration: none;
 }
 
 .logo {
-	width: 100%;
-	text-align: center;
-	text-transform: uppercase;
-	font-size: 48px;
-	font-weight: 500;
+  width: 100%;
+  text-align: center;
+  text-transform: uppercase;
+  font-size: 48px;
+  font-weight: 500;
 }
 
 .date {
-	width: 100%;
-	text-align: center;
-}
-
-.play {
-	z-index: 9999;
-	font-size: 42px;
-	display: flex;
-	align-items: center;
-	justify-content: center;
-}
-
-.volume-up-btn,
-.volume-mute-btn {
-	border: 0;
-	top: 0px;
-	right: 0px;
-	background: transparent;
-	z-index: 9999;
-}
-
-.volume-icon,
-.volume-icon {
-	color: white;
-}
-
-.volume-mute-btn {
-	display: block;
-}
-
-.volume-up-btn {
-	display: none;
-}
-
-video {
-	width: 100%;
-	object-fit: cover;
+  width: 100%;
+  text-align: center;
 }
 
 .links {
-	z-index: 9998;
-	height: 100%;
-	background: #00000099;
-	
-}
-
-
-.members {
-    font-size: 22px;
-}
-
-.mt-50 { 
-	margin-top: 62px;
+    background: #000000d6;
 }
 
 .links-item,
 .links-item:hover,
 .links-item:active,
 .links-item:focus {
-	color: white;
-	text-decoration: none;
+  color: white;
+  text-decoration: none;
 }
 
 .links-icon {
-	font-size: 32px;
+  font-size: 32px;
 }
 
 .links-text {
-	margin-top: -10px;
+  margin-top: -10px;
 }
 
-
-.live {
-	position: absolute;
-    font-weight: 900;
-    font-size: 90px;
-    color: #3c3c3c;
-    left: 22px;
-    z-index: -1;
+.members {
+  font-size: 22px;
 }
 
-.dj {
-	position: absolute;
-    font-weight: 900;
-    font-size: 90px;
-    color: #3c3c3c;
-    right: 22px;
-    z-index: -1;
+.options-wrapper {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  /* overflow: hidden; */
+  padding: 24px 0px 0px;
+  transition: 0.25s;
+}
+.options {
+  display: flex;
+  flex-direction: row;
+  align-items: stretch;
+  overflow: overlay;
+  min-width: 600px;
+  max-width: 900px;
+  width: calc(100% - 100px);
+  max-height: 60vh;
+  color: #000;
+}
+
+.option {
+  position: relative;
+  overflow: hidden;
+  min-width: 60px;
+  margin: 8px 0;
+  background: var(--optionBackground, var(--defaultBackground, #e6e9ed));
+  background-size: auto 120%;
+  background-position: center;
+  cursor: pointer;
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95);
+  padding: 12px;
+}
+.option.active {
+  flex-grow: 10000;
+  transform: scale(1);
+  max-width: 600px;
+  border-radius: 8px;
+  background-size: auto 100%;
+}
+.option:not(.active) {
+  flex-grow: 1;
+  border-radius: 8px;
+}
+.sub {
+  margin-top: 14px;
+  padding: 0 12px;
+  white-space: normal;
+  font-size: 18px;
+  font-family: "Ysabeau SC", sans-serif;
+}
+.options .option:not(.active) .sub,
+.options .option:not(.active) .info {
+  opacity: 0;
+  /* width: 0; */
+  margin: 0;
+}
+.options .option.active .info,
+.options .option.active .sub {
+  opacity: 1;
+  width: 100%;
+}
+.options .option .label {
+  display: flex;
+  height: 40px;
+  /* transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95); */
+  align-items: center;
+}
+.option .icon {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  min-width: 40px;
+  max-width: 40px;
+  height: 40px;
+  border-radius: 100%;
+  background-color: black;
+  color: var(--defaultBackground);
+}
+.option .info {
+  font-weight: bold;
+  margin-left: 10px;
+  font-size: 1.2rem;
+}
+.option .info,
+.option .sub {
+  transition: 0.5s cubic-bezier(0.05, 0.61, 0.41, 0.95), opacity 0.5s ease-out, width 0.5s ease-out;
+}
+@media screen and (max-width: 718px) {
+  .options {
+    min-width: 520px;
+    flex-direction: column;
+  }
+
+  .options .option:not(.active) {
+    min-height: 62px;
+  }
+  .options .option.active {
+    min-height: 400px;
+  }
+  .options .option:not(.active) .label .info {
+    opacity: 1;
+    white-space: nowrap;
+    margin-left: 10px;
+  }
+  .sub {
+    max-height: 320px;
+    overflow: auto;
+  }
+}
+@media screen and (max-width: 638px) {
+  .options {
+    min-width: 440px;
+  }
+}
+@media screen and (max-width: 558px) {
+  .options {
+    min-width: 360px;
+  }
+}
+
+@media screen and (min-width: 1024px) {
+  .option {
+    height: 460px;
+	margin: 8px;
+  }
+  .options .option:not(.active) .sub,
+  .options .option:not(.active) .info {
+    width: 0;
+  }
+}
+.options .option:nth-child(1) {
+  --defaultBackground: #F1BEB7;
+}
+.options .option:nth-child(2) {
+  --defaultBackground: #E6DBC7;
+}
+.options .option:nth-child(3) {
+  --defaultBackground: #F8F6E9;
+}
+.options .option:nth-child(4) {
+  --defaultBackground: #DCDDE2;
+}
+.options .option:nth-child(5) {
+  --defaultBackground: #C5C5D1;
 }
