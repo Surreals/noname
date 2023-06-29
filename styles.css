@@ -40,15 +40,11 @@ a {
 }
 
 .links-icon {
-  font-size: 32px;
+  font-size: 18px;
 }
 
 .links-text {
   margin-top: -10px;
-}
-
-.members {
-  font-size: 22px;
 }
 
 .options-wrapper {
