@@ -1,0 +1,109 @@
+@import url("https://fonts.googleapis.com/css2?family=Alumni+Sans+Pinstripe&display=swap");
+
+body {
+	background-color: black;
+	color: white;
+	font-family: "Alumni Sans Pinstripe", sans-serif;
+}
+
+.header {
+}
+
+.logo {
+	width: 100%;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 48px;
+	font-weight: 500;
+}
+
+.date {
+	width: 100%;
+	text-align: center;
+}
+
+.play {
+	z-index: 9999;
+	font-size: 42px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.volume-up-btn,
+.volume-mute-btn {
+	border: 0;
+	top: 0px;
+	right: 0px;
+	background: transparent;
+	z-index: 9999;
+}
+
+.volume-icon,
+.volume-icon {
+	color: white;
+}
+
+.volume-mute-btn {
+	display: block;
+}
+
+.volume-up-btn {
+	display: none;
+}
+
+video {
+	width: 100%;
+	object-fit: cover;
+}
+
+.links {
+	z-index: 9998;
+	height: 100%;
+	background: #00000099;
+	
+}
+
+
+.members {
+    font-size: 22px;
+}
+
+.mt-50 { 
+	margin-top: 62px;
+}
+
+.links-item,
+.links-item:hover,
+.links-item:active,
+.links-item:focus {
+	color: white;
+	text-decoration: none;
+}
+
+.links-icon {
+	font-size: 32px;
+}
+
+.links-text {
+	margin-top: -10px;
+}
+
+
+.live {
+	position: absolute;
+    font-weight: 900;
+    font-size: 90px;
+    color: #3c3c3c;
+    left: 22px;
+    z-index: -1;
+}
+
+.dj {
+	position: absolute;
+    font-weight: 900;
+    font-size: 90px;
+    color: #3c3c3c;
+    right: 22px;
+    z-index: -1;
+}
