@@ -180,17 +180,21 @@ a {
   }
 }
 .options .option:nth-child(1) {
-  --defaultBackground: #F1BEB7;
+  --defaultBackground: #B9D6D4;
 }
 .options .option:nth-child(2) {
-  --defaultBackground: #E6DBC7;
+  --defaultBackground: #F5F7FB;
 }
 .options .option:nth-child(3) {
-  --defaultBackground: #F8F6E9;
+  --defaultBackground: #E8D0CF;
 }
 .options .option:nth-child(4) {
-  --defaultBackground: #DCDDE2;
+  --defaultBackground: #C3C0BB;
 }
 .options .option:nth-child(5) {
-  --defaultBackground: #C5C5D1;
+  --defaultBackground: #E8DAB9;
+}
+
+.options .option:nth-child(6) {
+  --defaultBackground: #B9D6D4;
 }
