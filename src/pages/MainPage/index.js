@@ -1,8 +1,8 @@
-import { Space, Button } from "antd";
+import { Space, Button, Image } from "antd";
 import Layout from "../../common/Layout";
-import { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
 import { StarFilled, FlagFilled, LikeFilled, InstagramOutlined, ThunderboltFilled, FileImageFilled } from "@ant-design/icons";
+import gif from '../../assets/gifs/polar-bear-polar.gif'
 
 import "./index.scss";
 
@@ -63,6 +63,7 @@ const MainPage = () => {
           </Link>
         ))}
       </Space>
+      <Image width={'70%'} style={{marginTop: 64}} src={gif}/>
     </Layout>
   );
 };
