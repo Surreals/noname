@@ -6,6 +6,7 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import MainPage from "./pages/MainPage";
 import ArtistsPage from "./pages/ArtistsPage";
+import GalleryPage from "./pages/GalleryPage";
 
 const router = createBrowserRouter([
   {
@@ -13,6 +14,7 @@ const router = createBrowserRouter([
     element: <MainPage />,
   },
   { path: "/artists", element: <ArtistsPage /> },
+  { path: "/gallery", element: <GalleryPage /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
