@@ -9,6 +9,7 @@ const contentStyle = {
   textAlign: "center",
   padding: "0px 32px 0px",
   zIndex: 1,
+  position: 'relative',
 };
 const footerStyle = {
   textAlign: "center",
@@ -24,7 +25,7 @@ const Layout = ({ children, title, info }) => {
     <AntdLayout className="layout">
       <Header className="header" style={{ background: colorBgContainer }}>
         <h1
-          onClick={() => navigate('/')}
+          onClick={() => navigate("/")}
           style={{
             fontSize: 42,
             margin: 0,
@@ -34,37 +35,15 @@ const Layout = ({ children, title, info }) => {
         </h1>
         {title && (
           <Space>
-            <Button
-              type="text"
-              style={{ display: "contents" }}
-              icon={
-                <CaretLeftFilled
-                  style={{
-                    fontSize: 32,
-                  }}
-                />
-              }
-            />
             <h2
               style={{
                 fontSize: 32,
                 margin: 0,
-                fontWeight: 300
+                fontWeight: 300,
               }}
             >
               {title}
             </h2>
-            <Button
-              type="text"
-              style={{ display: "contents" }}
-              icon={
-                <CaretRightFilled
-                  style={{
-                    fontSize: 32,
-                  }}
-                />
-              }
-            />
           </Space>
         )}
       </Header>
