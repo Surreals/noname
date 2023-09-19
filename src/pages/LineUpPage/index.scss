@@ -21,10 +21,17 @@
 	
 	// font-family: 'Raleway', sans-serif;
   font-weight: bold;
-	font-size: 48px;
+	font-size: 24px;
 	
 	text-align: center;
 	
 	user-select: none;
   transform: translate(-50%, 0);
+}
+
+.morph {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
 }

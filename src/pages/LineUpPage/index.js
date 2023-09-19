@@ -3,7 +3,7 @@ import Layout from "../../common/Layout";
 import { useEffect } from "react";
 import "./index.scss";
 
-const ArtistsPage = () => {
+const LineUpPage = () => {
   useEffect(() => {
     const elts = {
       text1: document.getElementById("text1"),
@@ -11,7 +11,16 @@ const ArtistsPage = () => {
     };
 
     // The strings to morph between. You can change these to anything you want!
-    const texts = ["Surreal", "Siberian_Sun", "ESHKA", "hackedface", "sdsd"];
+    const artists = [
+      { artist: "Surreal", imgPath: "assets/images/IMG_4172.webp" },
+      {
+        artist: "Siberian_Sun",
+      },
+      { artist: "hackedface" },
+      { artist: "Sick_Solution" },
+      { artist: "ESHKA" },
+    ];
+    const texts = artists.map(({artist}) => artist);
 
     // Controls the speed of morphing.
     const morphTime = 1;
@@ -90,8 +99,8 @@ const ArtistsPage = () => {
     animate();
   }, []);
   return (
-    <Layout title={"ARTISTS"}>
-      <Space>
+    <Layout title={"LINE-UP"}>
+      <Space className={'morph'}>
         <div>
           <div id="container">
             <span id="text1"></span>
@@ -117,4 +126,4 @@ const ArtistsPage = () => {
   );
 };
 
-export default ArtistsPage;
+export default LineUpPage;

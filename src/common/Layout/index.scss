@@ -17,13 +17,22 @@
   min-height: 100vh;
 }
 
+.lt-default {
+  background: linear-gradient(270deg, #3d558c, #000000, #000000, #a75383);
+}
+
+.lt-artists {
+  background: linear-gradient(270deg, #7d8c3d, #000000, #5397a7);
+}
+
 .layout {
   // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
-  background: linear-gradient(270deg, #3d558c, #000000, #000000, #a75383);
   background-size: 400% 400%;
-  animation: gradient 10s ease infinite;
+  animation: gradient 7s ease infinite;
   height: 100vh;
 }
+
+
 
 @keyframes gradient {
   0% {
@@ -45,10 +54,13 @@
     display: flex;
     align-items: center;
     font-size: 36px;
-    padding: 8px;
+    padding: 18px 8px;
     font-weight: bold;
     flex-direction: column;
     height: auto;
+    background: transparent;
+    background-image: linear-gradient(#f253ee5c, #f253ee00);
+    min-height: 98px;
 }
 
 .infoWrap {
