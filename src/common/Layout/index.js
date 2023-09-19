@@ -1,45 +1,94 @@
 import React, { useEffect, useState } from "react";
-import { Layout as AntdLayout, theme } from "antd";
+import { Layout as AntdLayout, theme, Space, Button } from "antd";
+import { CaretLeftFilled, CaretRightFilled } from "@ant-design/icons";
+import { useNavigate } from "react-router-dom";
 import "./index.scss";
 const { Header, Footer, Content } = AntdLayout;
 
 const contentStyle = {
   textAlign: "center",
-  padding: "8px 32px 0px",
+  padding: "0px 32px 0px",
   zIndex: 1,
 };
 const footerStyle = {
   textAlign: "center",
   background: "transparent",
 };
-const Layout = ({ children }) => {
+const Layout = ({ children, title, info }) => {
   const {
     token: { colorBgContainer, colorBgBase, colorTextBase },
   } = theme.useToken();
+  const navigate = useNavigate();
 
   return (
     <AntdLayout className="layout">
-      {/* <div>
-        <div class="layer layer-1"></div>
-        <div class="layer layer-2"></div>
-        <div class="layer layer-3"></div>
-        <div class="layer layer-4"></div>
-        <div class="layer layer-5"></div>
-        <div class="layer layer-6"></div>
-      </div> */}
-      <Header className="header" style={{ background: "transparent" || colorBgBase }}>
-        NONAMEDVIZH
-      </Header>
-      <Content style={contentStyle}>
-        <div
-          className="childrenWrap"
+      <Header className="header" style={{ background: colorBgContainer }}>
+        <h1
+          onClick={() => navigate('/')}
           style={{
-            background: colorBgContainer,
-            color: colorTextBase,
+            fontSize: 42,
+            margin: 0,
           }}
         >
-          {children}
-        </div>
+          NONAMEDVIZH
+        </h1>
+        {title && (
+          <Space>
+            <Button
+              type="text"
+              style={{ display: "contents" }}
+              icon={
+                <CaretLeftFilled
+                  style={{
+                    fontSize: 32,
+                  }}
+                />
+              }
+            />
+            <h2
+              style={{
+                fontSize: 32,
+                margin: 0,
+                fontWeight: 300
+              }}
+            >
+              {title}
+            </h2>
+            <Button
+              type="text"
+              style={{ display: "contents" }}
+              icon={
+                <CaretRightFilled
+                  style={{
+                    fontSize: 32,
+                  }}
+                />
+              }
+            />
+          </Space>
+        )}
+      </Header>
+      <Content style={contentStyle}>
+        {info && (
+          <div
+            className="infoWrap"
+            style={{
+              background: colorBgContainer,
+              color: colorTextBase,
+            }}
+          >
+            {info}
+          </div>
+        )}
+        {children && (
+          <div
+            style={{
+              color: colorTextBase,
+            }}
+          >
+            {children}
+          </div>
+        )}
       </Content>
       <Footer style={footerStyle}>NONAMEDVIZH ©2023 Created by Surreal</Footer>
     </AntdLayout>

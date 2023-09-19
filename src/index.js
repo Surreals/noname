@@ -1,9 +1,19 @@
 import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
-import App from "./App";
-import { ConfigProvider, theme } from 'antd';
+import { ConfigProvider, theme } from "antd";
+import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
+import MainPage from "./pages/MainPage";
+import ArtistsPage from "./pages/ArtistsPage";
+
+const router = createBrowserRouter([
+  {
+    path: "/",
+    element: <MainPage />,
+  },
+  { path: "/artists", element: <ArtistsPage /> },
+]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
 root.render(
@@ -14,12 +24,12 @@ root.render(
           colorPrimary: "#EB2F96",
           colorInfo: "#EB2F96",
           fontFamily: "'Montserrat','Quicksand'",
-          colorBgContainer: '#35363a66'
+          colorBgContainer: "#c5c5c521",
         },
         algorithm: [theme.darkAlgorithm, theme.compactAlgorithm],
       }}
     >
-      <App />
+      <RouterProvider router={router} />
     </ConfigProvider>
   </React.StrictMode>
 );
