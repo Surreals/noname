@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { Layout as AntdLayout, theme, Space, Button } from "antd";
-import { CaretLeftFilled, CaretRightFilled } from "@ant-design/icons";
+import { InstagramOutlined, CaretRightFilled } from "@ant-design/icons";
 import { useNavigate, useLocation } from "react-router-dom";
 import "./index.scss";
 const { Header, Footer, Content } = AntdLayout;
