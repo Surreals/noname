@@ -1,4 +1,4 @@
-.layout {
+.layout1 {
   --s: 69px;
   --c1: #043645 0;
   --c2: #6bf682 0;
@@ -11,6 +11,9 @@
     var(--g2) var(--s) var(--s), var(--g1), var(--g1) var(--s) var(--s),
     repeating-linear-gradient(135deg, var(--c2) 12.5%, var(--c1) 25%);
   background-size: calc(2 * var(--s)) calc(2 * var(--s));
+}
+
+.layout {
   min-height: 100vh;
 }
 
@@ -26,4 +29,10 @@
   height: 64px;
   font-weight: bold;
   justify-content: center;
+}
+
+.childrenWrap {
+  border: 1px solid #e0529c;
+  padding: 24px;
+  border-radius: 14px;
 }

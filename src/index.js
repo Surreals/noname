@@ -13,8 +13,8 @@ root.render(
         token: {
           colorPrimary: "#EB2F96",
           colorInfo: "#EB2F96",
-          fontFamily: 'Quicksand',
-          colorBgContainer: '#10121b66'
+          fontFamily: "'Montserrat','Quicksand'",
+          colorBgContainer: '#35363a66'
         },
         algorithm: [theme.darkAlgorithm, theme.compactAlgorithm],
       }}
