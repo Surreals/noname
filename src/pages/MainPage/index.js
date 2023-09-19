@@ -2,7 +2,7 @@ import { Space, Button } from "antd";
 import Layout from "../../common/Layout";
 import { useEffect } from "react";
 import { useNavigate, Link } from "react-router-dom";
-import { StarFilled, FlagFilled, LikeFilled, InstagramOutlined, ThunderboltFilled } from "@ant-design/icons";
+import { StarFilled, FlagFilled, LikeFilled, InstagramOutlined, ThunderboltFilled, FileImageFilled } from "@ant-design/icons";
 
 import "./index.scss";
 
@@ -18,6 +18,11 @@ const links = [
     title: "LOCATION",
     route: "/location",
     icon: <FlagFilled style={iconStyle} />
+  },
+  {
+    title: "GALLERY",
+    route: "/gallery",
+    icon: <FileImageFilled style={iconStyle} />
   },
   {
     title: "TICKETS",
