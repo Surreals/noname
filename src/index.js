@@ -5,14 +5,14 @@ import { ConfigProvider, theme } from "antd";
 import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import MainPage from "./pages/MainPage";
-import ArtistsPage from "./pages/ArtistsPage";
+import LineUpPage from "./pages/LineUpPage";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainPage />,
   },
-  { path: "/artists", element: <ArtistsPage /> },
+  { path: "/line-up", element: <LineUpPage /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
@@ -23,7 +23,7 @@ root.render(
         token: {
           colorPrimary: "#EB2F96",
           colorInfo: "#EB2F96",
-          fontFamily: "'Montserrat','Quicksand'",
+          fontFamily: "'Press Start 2P','Montserrat','Quicksand'",
           colorBgContainer: "#c5c5c521",
         },
         algorithm: [theme.darkAlgorithm, theme.compactAlgorithm],
