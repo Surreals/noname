@@ -1,9 +1,10 @@
-import { Space } from "antd";
+import { Space, Image } from "antd";
 import Layout from "../../common/Layout";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import "./index.scss";
 
 const LineUpPage = () => {
+  const [image, setImage] = useState('../../assets/IMG_4172.webp');
   useEffect(() => {
     const elts = {
       text1: document.getElementById("text1"),
@@ -12,15 +13,13 @@ const LineUpPage = () => {
 
     // The strings to morph between. You can change these to anything you want!
     const artists = [
-      { artist: "Surreal", imgPath: "assets/images/IMG_4172.webp" },
-      {
-        artist: "Siberian_Sun",
-      },
-      { artist: "hackedface" },
-      { artist: "Sick_Solution" },
-      { artist: "ESHKA" },
+      { artist: "Surreal", imgPath: "../../assets/IMG_4172.webp" },
+      { artist: "Siberian_Sun", imgPath: "../../assets/IMG_4172.webp" },
+      { artist: "hackedface", imgPath: "../../assets/IMG_4172.webp" },
+      { artist: "Sick_Solution", imgPath: "../../assets/IMG_4172.webp" },
+      { artist: "ESHKA", imgPath: "../../assets/IMG_4172.webp" },
     ];
-    const texts = artists.map(({artist}) => artist);
+    const texts = artists.map(({ artist }) => artist);
 
     // Controls the speed of morphing.
     const morphTime = 1;
@@ -61,6 +60,8 @@ const LineUpPage = () => {
 
       elts.text1.textContent = texts[textIndex % texts.length];
       elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+
+      setImage(artists[textIndex % texts.length].imgPath);
     }
 
     function doCooldown() {
@@ -100,7 +101,7 @@ const LineUpPage = () => {
   }, []);
   return (
     <Layout title={"LINE-UP"}>
-      <Space className={'morph'}>
+      <Space className={"morph"}>
         <div>
           <div id="container">
             <span id="text1"></span>
@@ -121,6 +122,8 @@ const LineUpPage = () => {
             </defs>
           </svg>
         </div>
+        {image && <Image src={image} />}
+        {image && <img src={image} />}
       </Space>
     </Layout>
   );
