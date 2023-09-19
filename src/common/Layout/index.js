@@ -38,6 +38,7 @@ const Layout = ({ children, title, info }) => {
     <AntdLayout className={`layout ${getGradient()}`}>
       <Header className="header">
         <h1
+          id='logo'
           onClick={() => navigate("/")}
           style={{
             fontSize: 32,
