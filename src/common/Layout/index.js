@@ -27,7 +27,7 @@ const Layout = ({ children, title, info }) => {
   const getGradient = () => {
     console.log(match);
     switch (match.pathname) {
-        case '/artists': 
+        case '/line-up': 
             return 'lt-artists'
         default: 
             return 'lt-default'
