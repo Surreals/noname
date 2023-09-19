@@ -1,29 +1,37 @@
-import { Space, Image } from "antd";
+import { Space, Image, Button } from "antd";
 import Layout from "../../common/Layout";
 import { useEffect, useState } from "react";
+import { InstagramOutlined, SoundOutlined, YoutubeOutlined } from "@ant-design/icons";
+import surreal from "../../assets/images/srl.jpg";
+import eshka from "../../assets/images/eshka.jpg";
+import hacked from "../../assets/images/hckedface.jpg";
+import camp from "../../assets/images/camp.jpg";
 import "./index.scss";
 
 const LineUpPage = () => {
-  const [image, setImage] = useState('../../assets/IMG_4172.webp');
+  const [image1, setImage1] = useState(eshka);
+  const [image2, setImage2] = useState(surreal);
   useEffect(() => {
     const elts = {
       text1: document.getElementById("text1"),
       text2: document.getElementById("text2"),
+      img1: document.getElementById("image1"),
+      img2: document.getElementById("image2"),
     };
 
     // The strings to morph between. You can change these to anything you want!
     const artists = [
-      { artist: "Surreal", imgPath: "../../assets/IMG_4172.webp" },
-      { artist: "Siberian_Sun", imgPath: "../../assets/IMG_4172.webp" },
-      { artist: "hackedface", imgPath: "../../assets/IMG_4172.webp" },
-      { artist: "Sick_Solution", imgPath: "../../assets/IMG_4172.webp" },
-      { artist: "ESHKA", imgPath: "../../assets/IMG_4172.webp" },
+      { artist: "Surreal", imgPath: surreal },
+      { artist: "Siberian_Sun", imgPath: camp },
+      { artist: "hackedface", imgPath: hacked },
+      { artist: "Sick_Solution", imgPath: camp },
+      { artist: "ESHKA", imgPath: eshka },
     ];
     const texts = artists.map(({ artist }) => artist);
 
     // Controls the speed of morphing.
     const morphTime = 1;
-    const cooldownTime = 1.75;
+    const cooldownTime = 5.5;
 
     let textIndex = texts.length - 1;
     let time = new Date();
@@ -32,6 +40,8 @@ const LineUpPage = () => {
 
     elts.text1.textContent = texts[textIndex % texts.length];
     elts.text2.textContent = texts[(textIndex + 1) % texts.length];
+    setImage1(artists[textIndex % texts.length].imgPath);
+    setImage2(artists[(textIndex + 1) % texts.length].imgPath);
 
     function doMorph() {
       morph -= cooldown;
@@ -54,14 +64,21 @@ const LineUpPage = () => {
       elts.text2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
       elts.text2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
+      elts.img2.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+      elts.img2.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
       fraction = 1 - fraction;
       elts.text1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
       elts.text1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
 
+      elts.img1.style.filter = `blur(${Math.min(8 / fraction - 8, 100)}px)`;
+      elts.img1.style.opacity = `${Math.pow(fraction, 0.4) * 100}%`;
+
       elts.text1.textContent = texts[textIndex % texts.length];
       elts.text2.textContent = texts[(textIndex + 1) % texts.length];
 
-      setImage(artists[textIndex % texts.length].imgPath);
+      setImage1(artists[textIndex % texts.length].imgPath);
+      setImage2(artists[(textIndex + 1) % texts.length].imgPath);
     }
 
     function doCooldown() {
@@ -69,9 +86,13 @@ const LineUpPage = () => {
 
       elts.text2.style.filter = "";
       elts.text2.style.opacity = "100%";
+      elts.img2.style.filter = "";
+      elts.img2.style.opacity = "100%";
 
       elts.text1.style.filter = "";
       elts.text1.style.opacity = "0%";
+      elts.img1.style.filter = "";
+      elts.img1.style.opacity = "0%";
     }
 
     // Animation loop, which is called every frame.
@@ -101,12 +122,10 @@ const LineUpPage = () => {
   }, []);
   return (
     <Layout title={"LINE-UP"}>
-      <Space className={"morph"}>
-        <div>
-          <div id="container">
-            <span id="text1"></span>
-            <span id="text2"></span>
-          </div>
+      <Space className={"morph"} direction="vertical">
+        <div id="container">
+          <span id="text1"></span>
+          <span id="text2"></span>
           <svg id="filters">
             <defs>
               <filter id="threshold">
@@ -114,17 +133,25 @@ const LineUpPage = () => {
                   in="SourceGraphic"
                   type="matrix"
                   values="1 0 0 0 0
-                    0 1 0 0 0
-                    0 0 1 0 0
-                    0 0 0 255 -140"
+                  0 1 0 0 0
+                  0 0 1 0 0
+                  0 0 0 255 -140"
                 />
               </filter>
             </defs>
           </svg>
         </div>
-        {image && <Image src={image} />}
-        {image && <img src={image} />}
+        <div id="container2">
+          {image1 && <Image width={"100%"} id="image1" src={image1} />}
+          {image2 && <Image width={"100%"} id="image2" src={image2} />}
+        </div>
       </Space>
+
+      <div style={{display: 'flex', justifyContent: 'space-evenly'}}>
+          <Button block type="text" icon={<SoundOutlined style={{ fontSize: 54 }} />} />
+          <Button block type="text" icon={<YoutubeOutlined style={{ fontSize: 54 }} />} />
+          <Button block type="text" icon={<InstagramOutlined style={{ fontSize: 54 }} />} />
+        </div>
     </Layout>
   );
 };
