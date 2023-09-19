@@ -16,7 +16,7 @@ const links = [
   },
   {
     title: "LOCATION",
-    route: "/location",
+    link: "https://maps.app.goo.gl/zpDBFm2WZC8rF2od6",
     icon: <FlagFilled style={iconStyle} />
   },
   {
