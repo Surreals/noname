@@ -17,6 +17,29 @@
   min-height: 100vh;
 }
 
+.layout {
+  // background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background: linear-gradient(270deg, #3d558c, #000000, #000000, #a75383);
+  background-size: 400% 400%;
+  animation: gradient 10s ease infinite;
+  height: 100vh;
+}
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .header {
   position: sticky;
   top: 0px;
@@ -35,4 +58,5 @@
   border: 1px solid #e0529c;
   padding: 24px;
   border-radius: 14px;
+  backdrop-filter: blur(20px);
 }
