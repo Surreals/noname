@@ -9,11 +9,11 @@ import "./index.scss";
 const iconStyle = { fontSize: 24, verticalAlign: "baseline"}
 
 const links = [
-  {
-    title: "LINE-UP",
-    route: "/line-up",
-    icon: <ThunderboltFilled style={iconStyle} />
-  },
+  // {
+  //   title: "LINE-UP",
+  //   route: "/line-up",
+  //   icon: <ThunderboltFilled style={iconStyle} />
+  // },
   {
     title: "LOCATION",
     link: "https://maps.app.goo.gl/zpDBFm2WZC8rF2od6",
