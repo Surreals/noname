@@ -25,7 +25,7 @@ const TicketsPage = () => {
         <li class="p-0 m-0">Оплатити 400 грн</li>
         <li class="p-0 m-0">
           Відправити скріншот оплати разом з ФІО{" "}
-          <Link target="_blank" href="https://t.me/nonametickets">
+          <Link target="_blank" to="https://t.me/nonametickets">
             @nonametickets
           </Link>
         </li>
