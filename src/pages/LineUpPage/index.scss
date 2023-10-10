@@ -15,7 +15,6 @@
   filter: url(#threshold) blur(0.6px);
 }
 
-
 /* Your average text styling */
 #text1,
 #text2 {
@@ -46,7 +45,6 @@
   left: 50%;
   display: inline-block;
 
-
   // font-family: 'Raleway', sans-serif;
   font-weight: bold;
   font-size: 24px;
@@ -60,23 +58,25 @@
 
 .morph {
   position: relative;
-//   top: 50%;
-//   left: 50%;
+  //   top: 50%;
+  //   left: 50%;
   width: 100%;
   min-height: 60vh;
-//   transform: translate(-50%, -50%);
+  //   transform: translate(-50%, -50%);
 }
 
 #filters {
-	height: 0px;
+  height: 0px;
 }
 
-.socialBtn {
-  height: auto;
-}
+.socialBtnWrap {
 
-.socialLogo {
-  width: 56px;
-  border-radius: 14px;
-  margin-top: 24px;
+  .socialBtn {
+    height: auto;
+
+    .socialLogo {
+      width: 56px;
+      border-radius: 14px;
+    }
+  }
 }

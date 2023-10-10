@@ -44,14 +44,14 @@ const LineUpPage = () => {
       <Carousel autoplay afterChange={onChange} effect={"fade"}>
         {artists.map(({ artist, imgPath }) => (
           <div>
-            <h2 style={{fontSize: 22}}>{artist}</h2>
-            <Image src={imgPath} preview={false} style={{borderRadius: 2}}/>
+            <h2 style={{ fontSize: 22 }}>{artist}</h2>
+            <Image src={imgPath} preview={false} style={{ borderRadius: 2 }} />
           </div>
         ))}
       </Carousel>
 
-      <div style={{ display: "flex", justifyContent: "space-evenly", marginTop: 12 }}>
-        <Link to={artists[slide] && artists[slide].spoty} target="_blank">
+      <div style={{ display: "flex", justifyContent: "space-evenly", marginTop: 36, alignItems: 'center' }}>
+        <Link to={artists[slide] && artists[slide].spoty} target="_blank" className="socialBtnWrap">
           <Button
             disabled={!artists[slide] || !artists[slide].spoty}
             block
@@ -59,11 +59,11 @@ const LineUpPage = () => {
             className="socialBtn"
             // icon={<SoundOutlined style={{ fontSize: 48 }} />}
           >
-            <img className="socialLogo" src={spotify} alt='Spotify'/>
+            <img className="socialLogo" src={spotify} alt="Spotify" />
           </Button>
         </Link>
 
-        <Link to={artists[slide] && artists[slide].youtube} target="_blank">
+        <Link to={artists[slide] && artists[slide].youtube} target="_blank" className="socialBtnWrap">
           <Button
             disabled={!artists[slide] || !artists[slide].youtube}
             block
@@ -71,11 +71,11 @@ const LineUpPage = () => {
             className="socialBtn"
             // icon={<YoutubeOutlined style={{ fontSize: 48 }} />}
           >
-            <img className="socialLogo" src={youtube} alt='YouTube' />
+            <img className="socialLogo" src={youtube} alt="YouTube" style={{ width: 57 }} />
           </Button>
         </Link>
 
-        <Link to={artists[slide] && artists[slide].inst} target="_blank">
+        <Link to={artists[slide] && artists[slide].inst} target="_blank" className="socialBtnWrap">
           <Button
             disabled={!artists[slide] || !artists[slide].inst}
             block
@@ -83,7 +83,7 @@ const LineUpPage = () => {
             className="socialBtn"
             // icon={<InstagramOutlined style={{ fontSize: 48 }} />}
           >
-            <img className="socialLogo" src={inst} alt='Instagram'  />
+            <img className="socialLogo" src={inst} alt="Instagram" style={{ width: 58 }} />
           </Button>
         </Link>
       </div>
