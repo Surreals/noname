@@ -16,7 +16,7 @@ const router = createBrowserRouter([
       { path: "/gallery", element: <GalleryPage /> },
       { path: "/line-up", element: <LineUpPage /> },
       { path: "/tickets", element: <TicketsPage /> },
-      { path: "*", element:<Navigate to='/' replace/> },
+      { path: "*", element: <Navigate to='/' replace/> },
     ],
   },
 ]);

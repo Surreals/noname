@@ -44,8 +44,8 @@ const LineUpPage = () => {
       <Carousel autoplay afterChange={onChange} effect={"fade"}>
         {artists.map(({ artist, imgPath }) => (
           <div>
-            <h2>{artist}</h2>
-            <Image width={"100%"} src={imgPath} preview={false} style={{borderRadius: 2}}/>
+            <h2 style={{fontSize: 22}}>{artist}</h2>
+            <Image src={imgPath} preview={false} style={{borderRadius: 2}}/>
           </div>
         ))}
       </Carousel>

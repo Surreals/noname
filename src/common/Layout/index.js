@@ -61,7 +61,7 @@ const Layout = ({ children, title, info }) => {
           </Space>
         )}
       </Header>
-      <Content style={contentStyle}>
+      <Content style={contentStyle} className="mainContent">
         {info && (
           <div
             className="infoWrap"
