@@ -22,11 +22,11 @@ const links = [
     icon: <StarFilled style={iconStyle} />,
     props: { type: "primary" },
   },
-  // {
-  //   title: "LINE-UP",
-  //   route: "/line-up",
-  //   icon: <ThunderboltFilled style={iconStyle} />
-  // },
+  {
+    title: "LINE-UP",
+    route: "/line-up",
+    icon: <ThunderboltFilled style={iconStyle} />
+  },
   {
     title: "LOCATION",
     link: "https://maps.app.goo.gl/zpDBFm2WZC8rF2od6",

@@ -2,7 +2,7 @@ import React from "react";
 import ReactDOM from "react-dom/client";
 import "./index.css";
 import { ConfigProvider, theme } from "antd";
-import { createBrowserRouter, RouterProvider } from "react-router-dom";
+import { createBrowserRouter, Navigate, RouterProvider } from "react-router-dom";
 import reportWebVitals from "./reportWebVitals";
 import MainPage from "./pages/MainPage";
 import GalleryPage from "./pages/GalleryPage";
@@ -11,12 +11,14 @@ import TicketsPage from "./pages/TicketsPage";
 
 const router = createBrowserRouter([
   {
-    path: "/",
-    element: <MainPage />,
+    children: [
+      { path: "/", element: <MainPage /> },
+      { path: "/gallery", element: <GalleryPage /> },
+      { path: "/line-up", element: <LineUpPage /> },
+      { path: "/tickets", element: <TicketsPage /> },
+      { path: "*", element:<Navigate to='/' replace/> },
+    ],
   },
-  { path: "/gallery", element: <GalleryPage /> },
-  { path: "/line-up", element: <LineUpPage /> },
-  { path: "/tickets", element: <TicketsPage /> },
 ]);
 
 const root = ReactDOM.createRoot(document.getElementById("root"));
