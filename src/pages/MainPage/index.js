@@ -16,16 +16,17 @@ import "./index.scss";
 const iconStyle = { fontSize: 24, verticalAlign: "baseline" };
 
 const links = [
-  {
-    title: "TICKETS",
-    route: "/tickets",
-    icon: <StarFilled style={iconStyle} />,
-    props: { type: "primary" },
-  },
+  // {
+  //   title: "TICKETS",
+  //   route: "/tickets",
+  //   icon: <StarFilled style={iconStyle} />,
+  //   props: { type: "primary" },
+  // },
   {
     title: "LINE-UP",
     route: "/line-up",
-    icon: <ThunderboltFilled style={iconStyle} />
+    icon: <ThunderboltFilled style={iconStyle} />,
+    props: { type: "primary" },
   },
   {
     title: "LOCATION",
