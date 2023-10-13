@@ -5,6 +5,9 @@ import { Link } from "react-router-dom";
 import SURR from "../../assets/posters/SURR.jpg";
 import SN from "../../assets/posters/SN.jpg";
 import SICKSOLUTION from "../../assets/posters/SICKSOLUTION.jpg";
+import ESHKA from "../../assets/posters/ESHKA.jpg";
+import CR from "../../assets/posters/CR.jpg";
+import HCKD from "../../assets/posters/HCKD.jpg";
 import spotify from "../../assets/social_logos/spotify.png";
 import inst from "../../assets/social_logos/inst.png";
 import youtube from "../../assets/social_logos/youtube.png";
@@ -26,11 +29,32 @@ const artists = [
     youtube: "https://www.youtube.com/@siberiansun7",
   },
   {
+    artist: "hackedface",
+    imgPath: HCKD,
+    spoty: "https://open.spotify.com/artist/4GIyZ8aBc3t04EYYp2zb4v?si=szio2aODQ4S10H8FWvvoSA",
+    inst: "https://www.instagram.com/hckedface",
+    youtube: "https://www.youtube.com/@hackedface",
+  },
+  {
     artist: "Sick_Solution",
     imgPath: SICKSOLUTION,
     spoty: "https://open.spotify.com/artist/5I8Ea6B50cE6NR6HL6BHa6?si=-_XjaClTTvWvtE92R2TwAQ",
     inst: "https://www.instagram.com/sicksolutionhc/",
     youtube: "https://www.youtube.com/@sicksolution3327",
+  },
+  {
+    artist: "ESHKA",
+    imgPath: ESHKA,
+    spoty: "https://open.spotify.com/artist/29ixGNCllssQ1u9VrspGqG?si=Q7Dxk2iRRMWvPRwovxWNHA",
+    inst: "https://www.instagram.com/makarukkk/",
+    youtube: "https://www.youtube.com/",
+  },
+  {
+    artist: "Cosmic Rain",
+    imgPath: CR,
+    spoty: "https://soundcloud.com/theburialofme",
+    inst: "https://www.instagram.com/cosmicrain_/",
+    youtube: "https://www.youtube.com/",
   },
 ];
 
